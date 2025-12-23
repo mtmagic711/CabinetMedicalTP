@@ -18,6 +18,6 @@ public class Medecin {
     @GeneratedValue
     long id;
     String nom;
-    String specilite;
+    String specialite;
     String email;
 }

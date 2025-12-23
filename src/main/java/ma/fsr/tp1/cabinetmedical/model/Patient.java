@@ -18,7 +18,7 @@ import java.time.LocalDate;
 public class Patient {
     @Id
     @GeneratedValue
-    long id;
+    Long id;
     String nom;
     LocalDate dateNaissance;
     String genre;
