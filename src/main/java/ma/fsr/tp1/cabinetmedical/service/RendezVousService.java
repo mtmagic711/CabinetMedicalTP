@@ -7,7 +7,9 @@ import ma.fsr.tp1.cabinetmedical.repository.MedecinRepository;
 import ma.fsr.tp1.cabinetmedical.repository.PatientRepository;
 import ma.fsr.tp1.cabinetmedical.repository.RendezVousRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -27,10 +29,10 @@ public class RendezVousService {
         Medecin medecin = medecinRepository.findById(medecinId).orElse(null);
 
         if (patient == null) {
-            throw new RuntimeException("Patient n'existe pas");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Patient n'existe pas");
         }
         if (medecin == null) {
-            throw new RuntimeException("Medecin n'existe pas");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Medecin n'existe pas");
         }
         RendezVous rendezVous = new RendezVous();
         rendezVous.setStatut("PLANIFI");

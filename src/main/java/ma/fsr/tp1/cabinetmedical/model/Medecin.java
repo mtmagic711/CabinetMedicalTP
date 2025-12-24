@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Medecin {
     @Id
     @GeneratedValue
-    long id;
+    Long id;
     String nom;
     String specialite;
     String email;

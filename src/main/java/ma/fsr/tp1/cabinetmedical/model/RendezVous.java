@@ -19,7 +19,7 @@ import java.util.Date;
 public class RendezVous {
     @Id
     @GeneratedValue
-    long id;
+    Long id;
     LocalDate dateRdv;
     String statut;
     @ManyToOne

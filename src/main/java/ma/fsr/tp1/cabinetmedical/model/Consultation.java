@@ -20,7 +20,7 @@ import java.util.Date;
 public class Consultation {
     @Id
     @GeneratedValue
-    long id;
+    Long id;
     LocalDate dateConsultation;
     String rapport;
     @OneToOne
